@@ -10,4 +10,5 @@ jobs:
 
     steps:
     - name: Runngin POST curl to Endpoiny
-      run: curl -X POST https://gin-get-repository-name-with-github.onrender.com/ping -H 'Content-Type: application/json' -d '{"name": "$GITHUB_REPOSITORY"}'
+      run: |
+        curl -X POST https://gin-get-repository-name-with-github.onrender.com/ping -H 'Content-Type: application/json' -d '{"name": "$GITHUB_REPOSITORY"}'

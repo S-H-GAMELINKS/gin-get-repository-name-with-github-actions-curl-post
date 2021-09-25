@@ -1,0 +1,13 @@
+name: Curl to Endpoint
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Runngin POST curl to Endpoiny
+      run: curl -X POST https://gin-get-repository-name-with-github.onrender.com/ping -H 'Content-Type: application/json' -d '{"name": "$GITHUB_REPOSITORY"}'

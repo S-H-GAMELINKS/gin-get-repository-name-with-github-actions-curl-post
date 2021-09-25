@@ -10,9 +10,9 @@ jobs:
 
     steps:
     - name: Update package
-      run: apt update
+      run: apt-get update
     - name: Install package
-      run: apt install curl
+      run: apt-get install curl
     - name: Runngin POST curl to Endpoiny
       run: |
         curl -X POST https://gin-get-repository-name-with-github.onrender.com/ping -H 'Content-Type: application/json' -d '{"name": "$GITHUB_REPOSITORY"}'

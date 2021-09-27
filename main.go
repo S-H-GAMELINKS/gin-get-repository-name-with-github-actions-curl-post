@@ -18,11 +18,8 @@ func main() {
 			c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 			return
 		}
-		str := repositoryRequest.Name
-		rep := regexp.MustCompile(`\s*\/\s*`)
-		result := rep.Split(str, -1)
 		c.JSON(200, gin.H{
-			"message": result[1],
+			"repositoryName": repositoryRequest.Name,
 		})
 	})
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")

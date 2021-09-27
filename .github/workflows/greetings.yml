@@ -15,4 +15,4 @@ jobs:
       run: sudo apt-get install curl
     - name: Runngin POST curl to Endpoiny
       run: |
-        curl -X POST https://gin-get-repository-name-with-github.onrender.com/ping -H 'Content-Type: application/json' -d "{\"name\": \"$GITHUB_REPOSITORY\"}"
+        curl -X POST https://gin-get-repository-name-with-github.onrender.com/ping -H 'Content-Type: application/json' -d "{\"name\": \"${{ github.event.repository.name }}\"}"
